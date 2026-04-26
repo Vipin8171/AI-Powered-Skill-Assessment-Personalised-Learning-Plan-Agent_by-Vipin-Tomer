@@ -1,0 +1,141 @@
+{
+  "candidate_name": "Vipin Tomer",
+  "job_description_skills": [
+    "LLMs",
+    "Deep Learning",
+    "RAG",
+    "Python",
+    "Machine Learning",
+    "Computer Vision",
+    "AWS",
+    "SQL",
+    "FAISS",
+    "FastAPI",
+    "Docker",
+    "PyTorch",
+    "Statistics",
+    "Git",
+    "Linux"
+  ],
+  "resume_skills": [
+    "RAG",
+    "Deep Learning",
+    "Computer Vision",
+    "LLMs",
+    "Machine Learning",
+    "Python",
+    "SQL",
+    "Statistics",
+    "Git",
+    "LangChain",
+    "FAISS",
+    "PyTorch",
+    "Linux"
+  ],
+  "summary": {
+    "overall_score": 42.4,
+    "strengths": [],
+    "gaps": [
+      "LLMs",
+      "Deep Learning",
+      "RAG",
+      "Python",
+      "Machine Learning",
+      "AWS",
+      "SQL"
+    ],
+    "readiness": "early"
+  },
+  "assessments": [
+    {
+      "skill": "LLMs",
+      "score": 54,
+      "level": "developing",
+      "gap": 46
+    },
+    {
+      "skill": "Deep Learning",
+      "score": 52,
+      "level": "developing",
+      "gap": 48
+    },
+    {
+      "skill": "RAG",
+      "score": 44,
+      "level": "early",
+      "gap": 56
+    },
+    {
+      "skill": "Python",
+      "score": 36,
+      "level": "early",
+      "gap": 64
+    },
+    {
+      "skill": "Machine Learning",
+      "score": 53,
+      "level": "developing",
+      "gap": 47
+    },
+    {
+      "skill": "Computer Vision",
+      "score": 60,
+      "level": "developing",
+      "gap": 40
+    },
+    {
+      "skill": "AWS",
+      "score": 6,
+      "level": "early",
+      "gap": 94
+    },
+    {
+      "skill": "SQL",
+      "score": 34,
+      "level": "early",
+      "gap": 66
+    }
+  ],
+  "learning_plan": [
+    {
+      "skill": "AWS",
+      "time_hours": 18,
+      "bridge_skills": [
+        "Docker",
+        "FastAPI",
+        "MLOps"
+      ],
+      "first_step": "Build a tiny project that combines Docker with AWS and write a short evaluation note."
+    },
+    {
+      "skill": "SQL",
+      "time_hours": 14,
+      "bridge_skills": [
+        "Data Analysis",
+        "Python",
+        "Analytics"
+      ],
+      "first_step": "Build a tiny project that combines Data Analysis with SQL and write a short evaluation note."
+    },
+    {
+      "skill": "Python",
+      "time_hours": 14,
+      "bridge_skills": [
+        "SQL",
+        "Git",
+        "Data Analysis"
+      ],
+      "first_step": "Build a tiny project that combines SQL with Python and write a short evaluation note."
+    },
+    {
+      "skill": "RAG",
+      "time_hours": 14,
+      "bridge_skills": [
+        "FAISS",
+        "LangChain",
+        "Embeddings"
+      ],
+      "first_step": "Build a tiny project that combines FAISS with RAG and write a short evaluation note."
+    }
+  ]
+}

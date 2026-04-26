@@ -1,0 +1,23 @@
+AI Engineer Intern
+
+We are looking for a candidate who can turn research ideas into working products.
+
+Required skills:
+- Python
+- Machine Learning
+- Deep Learning
+- Computer Vision
+- LLMs and RAG workflows
+- PyTorch
+- FastAPI
+- Docker
+- AWS or cloud deployment basics
+- Git and Linux
+
+Nice to have:
+- SQL
+- statistics for experimentation
+- prompt engineering
+- vector search / FAISS
+
+You should be able to explain tradeoffs, measure model quality, and ship a small AI service end to end.

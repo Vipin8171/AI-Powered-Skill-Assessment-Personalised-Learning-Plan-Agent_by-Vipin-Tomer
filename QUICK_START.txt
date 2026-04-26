@@ -1,0 +1,109 @@
+# ⚡ 3-MINUTE QUICK START
+
+## ❶ GET API KEY (1 minute)
+
+1. Go to: https://console.groq.com
+2. Sign up or log in (FREE)
+3. Go to: API Keys section
+4. Click: "Create New API Key"
+5. Copy the key (starts with `gsk_`)
+
+```
+Example key:
+gsk_w1X2Y3Z4a5B6c7D8e9F0g1H2i3J4k
+```
+
+---
+
+## ❷ UPDATE .env FILE (1 minute)
+
+**Open file:** `c:\Users\tvipi\project\Internship\Deccan ai\.env`
+
+**Find this:**
+```
+GROQ_API_KEY=gsk_placeholder_your_api_key_here
+```
+
+**Replace with:**
+```
+GROQ_API_KEY=gsk_w1X2Y3Z4a5B6c7D8e9F0g1H2i3J4k
+```
+
+**Save:** Ctrl+S
+
+---
+
+## ❸ RUN APP (1 minute)
+
+**Open PowerShell:**
+```powershell
+cd "c:\Users\tvipi\project\Internship\Deccan ai"
+streamlit run app.py
+```
+
+**That's it!** 🎉
+
+---
+
+## ✅ How to Know It Works
+
+✅ App opens at `http://localhost:8503`
+✅ No red error about "API key not configured"
+✅ Questions appear after ~5 seconds
+✅ Questions mention your resume or the job
+✅ Answers get detailed feedback
+
+---
+
+## 🚀 NOW YOU CAN
+
+- Upload resume (PDF)
+- Paste job description
+- Click "Start Assessment"
+- Get AI-powered interview
+- Download report
+
+---
+
+## ❓ Something Wrong?
+
+**Error: "Groq API key not configured!"**
+→ Edit .env, check you pasted the full key, save, restart
+
+**Questions are slow**
+→ Normal! First question takes 3-5 seconds.
+
+**Same question twice?**
+→ Expected. Different wording, same skill topic.
+
+**App crashes?**
+→ Check internet connection. Groq needs to reach cloud API.
+
+---
+
+## 📞 Need Help?
+
+Read these files in order:
+1. `API_KEY_SETUP.md` (this folder)
+2. `GROQ_SETUP.md` (this folder)
+3. `GROQ_UPGRADE_GUIDE.md` (this folder)
+
+---
+
+## 🎯 What Just Happened?
+
+Your assessment app went from:
+- ❌ Generic static questions
+- ❌ Basic keyword matching
+- ❌ Feels like a homework project
+
+To:
+- ✅ Personalized AI questions
+- ✅ Intelligent evaluation
+- ✅ Feels like startup product
+
+---
+
+**That's all you need to do!** 
+
+Enjoy your AI-powered skill assessment tool! 🚀

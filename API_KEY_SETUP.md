@@ -1,0 +1,251 @@
+# 🔑 HOW TO ADD YOUR GROQ API KEY TO THE VIRTUAL ENVIRONMENT
+
+## The 3-Minute Setup
+
+You asked: **"How to add API key in my virtual environment that can be used here?"**
+
+Here's the answer with exact steps:
+
+---
+
+## OPTION 1: Using .env File (EASIEST & RECOMMENDED) ✅
+
+### Step 1: Get Your API Key
+1. Visit: https://console.groq.com
+2. Log in (or sign up - it's FREE)
+3. Click **"API Keys"** in the left sidebar
+4. Click **"Create New API Key"**
+5. Copy the key that appears (looks like: `gsk_1234567890abcdefghijklmnop`)
+
+### Step 2: Open .env File
+In VS Code:
+- Location: `c:\Users\tvipi\project\Internship\Deccan ai\.env`
+- Or click on .env in the file explorer
+
+### Step 3: Paste Your Key
+**Find this line:**
+```
+GROQ_API_KEY=gsk_placeholder_your_api_key_here
+```
+
+**Replace with your actual key:**
+```
+GROQ_API_KEY=gsk_1234567890abcdefghijklmnop
+```
+
+### Step 4: Save
+- Press **Ctrl+S** to save
+- Close the file
+
+### Step 5: Restart App & It Works!
+```powershell
+cd "c:\Users\tvipi\project\Internship\Deccan ai"
+streamlit run app.py
+```
+
+**✅ Done!** Your app now has access to the API key.
+
+---
+
+## OPTION 2: Using Windows Environment Variables (Manual)
+
+If you prefer system-wide setup:
+
+### Step 1: Open Environment Variables
+1. Press **Win + R** key
+2. Type: `sysdm.cpl`
+3. Click **"Environment Variables"**
+
+### Step 2: Create New Variable
+1. Click **"New"** under "User variables"
+2. **Variable name:** `GROQ_API_KEY`
+3. **Variable value:** `gsk_1234567890abcdefghijklmnop`
+4. Click **OK** → **OK** → **OK**
+
+### Step 3: Restart Your Terminal
+Close VS Code and reopen it (so it sees the new variable).
+
+**Start app:**
+```powershell
+cd "c:\Users\tvipi\project\Internship\Deccan ai"
+streamlit run app.py
+```
+
+---
+
+## How It Works Under the Hood
+
+When you start the app:
+
+```
+1. Python loads config.py
+   ↓
+2. config.py runs: load_dotenv()
+   ↓
+3. Python checks .env file for GROQ_API_KEY
+   ↓
+4. Gets the value: gsk_1234567890...
+   ↓
+5. Stores in GROQ_API_KEY variable
+   ↓
+6. App imports groq_integration.py
+   ↓
+7. groq_integration.py uses GROQ_API_KEY
+   ↓
+8. ✅ API calls work!
+```
+
+---
+
+## Understanding: Virtual Environment vs API Key
+
+### Virtual Environment (`c:\Users\tvipi\project\.venv\`)
+- Contains Python packages (streamlit, groq, etc.)
+- Isolated environment for this project
+- Created with `python -m venv .venv`
+
+### API Key Configuration
+- NOT stored in virtual environment
+- Stored in `.env` file (local to project)
+- OR in Windows environment variables (system-wide)
+- **Never** committed to Git
+
+### Why use .env file?
+✅ Keeps API key local (not in code)  
+✅ Easy to switch between dev/production keys  
+✅ Protected by `.gitignore`  
+✅ Works with python-dotenv package  
+
+---
+
+## Verification: Is It Working?
+
+### Test 1: Check .env File
+```powershell
+cd "c:\Users\tvipi\project\Internship\Deccan ai"
+type .env
+```
+Should show:
+```
+GROQ_API_KEY=gsk_1234567890abcdefghijklmnop
+```
+
+### Test 2: Run the App
+```powershell
+streamlit run app.py
+```
+Should see:
+- ✅ No error about missing API key
+- ✅ "Generating personalized question..." spinner
+- ✅ Unique, AI-generated questions appear
+
+### Test 3: Check from Python
+```powershell
+python -c "from config import GROQ_API_KEY; print('Key loaded!' if GROQ_API_KEY else 'Key missing!')"
+```
+Should print: `Key loaded!`
+
+---
+
+## Common Issues & Fixes
+
+### Issue: "Groq API key not configured!"
+**Cause:** API key not in `.env`  
+**Fix:**
+1. Open `.env` file
+2. Replace placeholder with real key
+3. Save (Ctrl+S)
+4. Restart app
+
+### Issue: "Invalid Groq API key format"
+**Cause:** Key doesn't start with `gsk_`  
+**Fix:**
+1. Go to https://console.groq.com/keys
+2. Copy the FULL key (including `gsk_`)
+3. Paste into `.env`
+
+### Issue: App still slow or not using Groq
+**Cause:** App wasn't restarted after editing `.env`  
+**Fix:**
+1. Stop the app (Ctrl+C in terminal)
+2. Edit `.env`
+3. Save the file
+4. Run `streamlit run app.py` again
+
+### Issue: "ModuleNotFoundError: No module named 'groq'"
+**Cause:** Package not installed  
+**Fix:**
+```powershell
+c:\Users\tvipi\project\.venv\Scripts\pip.exe install groq
+```
+
+---
+
+## Quick Reference
+
+| What | Where | Value |
+|------|-------|-------|
+| **API Key Location** | https://console.groq.com/keys | `gsk_...` |
+| **Config File** | `.env` in project folder | Plain text |
+| **Virtual Env** | `c:\Users\tvipi\project\.venv\` | Python packages |
+| **Start App** | Any terminal | `streamlit run app.py` |
+
+---
+
+## After Setup: What Happens?
+
+Once your API key is set up:
+
+### During Assessment:
+1. **Question Generation**
+   - App calls Groq
+   - Generates unique question
+   - Shows with spinner
+
+2. **Answer Evaluation**
+   - App sends answer to Groq
+   - Receives AI evaluation
+   - Shows score + feedback
+
+3. **Context Explanations**
+   - "Why this question?" is generated by Groq
+   - Personalized to the job
+
+### Behind the Scenes:
+```python
+from groq import Groq
+
+client = Groq(api_key="gsk_your_key")  # Uses your API key
+
+response = client.chat.completions.create(
+    model="llama-3.1-70b-versatile",
+    messages=[...]
+)
+```
+
+---
+
+## That's It! 🎉
+
+Your setup is complete once:
+- ✅ .env file has your real API key
+- ✅ App starts without errors
+- ✅ Questions are AI-generated (look unique)
+- ✅ Answers get detailed feedback
+
+---
+
+## Next: Start Using the App
+
+```powershell
+cd "c:\Users\tvipi\project\Internship\Deccan ai"
+streamlit run app.py
+```
+
+Your app will:
+- Open at `http://localhost:8503`
+- Load with modern dark UI
+- Show AI-powered assessment
+- Generate personalized feedback
+
+**Questions?** Check `GROQ_UPGRADE_GUIDE.md` for more details.
